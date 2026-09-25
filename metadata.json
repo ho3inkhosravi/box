@@ -1,0 +1,6 @@
+{
+  "name": "پنل مدیریت باکس و متریال",
+  "description": "پنل مدیریت و بهینه‌سازی مدل‌های باکس و میزان مصرف متریال (BOM) متصل به دیتابیس سوپابیس",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
