@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Camera, Settings, Upload, Plus, Trash2, ArrowUp, ArrowDown, Play, FileText, CheckCircle2, AlertCircle, ScanLine, X, Loader2, FileUp } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
+// @ts-expect-error vite url import
 import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
@@ -93,7 +94,7 @@ export function AILabelScanner({ currentCutList = [] }: { currentCutList?: any[]
         if (!context) throw new Error('Cannot create canvas context');
         canvas.height = viewport.height;
         canvas.width = viewport.width;
-        await page.render({ canvasContext: context, viewport: viewport }).promise;
+        await (page.render({ canvasContext: context, viewport: viewport, canvas: canvas } as any)).promise;
         base64Image = canvas.toDataURL('image/jpeg', 0.8);
         fileMimeType = 'image/jpeg';
       } else if (file.type.startsWith('image/')) {

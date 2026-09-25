@@ -23,6 +23,7 @@ interface CabinetPart {
   cz: number;
   color: number;
   isDoor?: boolean;
+  pvcFaces?: string[];
   cutL?: string;
   cutW?: string;
   pvcText?: string;

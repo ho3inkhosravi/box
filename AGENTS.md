@@ -378,3 +378,15 @@ The old Kotlin app (`SupabaseClient.kt`) relied on 3 core tables. The TypeScript
 * **Actions:**
   * **Codebase Cleanup:** Completely deleted the legacy Android project directories (`app`, `اپ اندروید`) and their associated build configurations (`build.gradle.kts`, `gradle.properties`, `settings.gradle.kts`).
   * The repository is now strictly a standalone, purely web-based application (TypeScript + React + Vite).
+
+### [Phase 27: Web Migration, Type Safety & Build Cleanup] - 2026-09-25
+* **Done by:** Antigravity AI Coding Agent (Current Session).
+* **Actions:**
+  * **GitHub Import Migration Triage:** Executed Web migration per `github-import-migration` skill specifications.
+  * **Removed Stale Files:** Removed orphaned Next.js artifacts (`next.config.ts`, `next-env.d.ts`) and unused uninstalled shadcn utilities (`lib/utils.ts`, `hooks/use-mobile.ts`).
+  * **Type Definitions & Error Resolution:**
+    * Extended `CabinetPart` interface in `src/components/CabinetCalculator.tsx` with optional `pvcFaces?: string[]` to resolve TypeScript compilation errors.
+    * Added `@ts-expect-error` and typed canvas rendering fallback in `src/components/AILabelScanner.tsx` for `pdfjs-dist` worker URL import and `page.render` options.
+  * **Metadata & RTL Synchronization:** Synchronized `<title>`, `<meta name="description">`, `og:title`, and `og:description` in `index.html` with Persian title and metadata from `metadata.json`, and set `<html lang="fa" dir="rtl">`.
+  * **Environment Configuration:** Added `.env.example` documenting `GEMINI_API_KEY`.
+  * **Build & Lint Verification:** Verified 100% clean passes for both `tsc --noEmit` (`npm run lint`) and Vite production bundle (`npm run build`).
